@@ -22,7 +22,7 @@ Run ng serve for a dev server and navigate to http://localhost:4200/.
  2. '/admin'. The admin root is used to manage users. <br/>
  To log in as administrator use: email- user@gmail.com, password- 123456
 
-#Technologies
+###Technologies
  - Angular 11.0.4
  - Css without framework
  - NgRx - user storage
