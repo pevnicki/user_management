@@ -1,0 +1,17 @@
+<div
+  *ngIf="users$ | async as users; else loading"
+  class="posts"
+>
+  <app-user
+    *ngFor="let user of users"
+    [user]="user"
+  ></app-user>
+</div>
+
+<ng-template #loading>
+  <div class="text-center"><div class="lds-circle"><div></div></div></div>
+</ng-template>
+
+
+
+<!--*ngFor="let user of users$ | async |-->

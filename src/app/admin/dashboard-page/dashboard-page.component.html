@@ -1,0 +1,39 @@
+<div *ngIf="isLoading$ | async; else usersList">
+  <p class="text-center loader"></p>
+</div>
+
+<ng-template #usersList>
+  <div class="form-control">
+    <input type="text" placeholder="Find user..." [(ngModel)]="searchStr">
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Birthday</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users$ | async | searchUsers: searchStr; let idx = index">
+      <td>{{ idx + 1 }}</td>
+      <td>{{ user.first_name }}</td>
+      <td>{{ user.last_name }}</td>
+      <td>{{ user.birthday | date:'longDate'}}</td>
+      <td>
+        <button
+          class="btn btn-link open"
+          [routerLink]="['/admin', 'user', user.id, 'edit']"
+        >
+          Edit
+        </button>
+        <a (click)="remove(user.id)">Remove</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<!--| searchUsers: searchStr; let idx = index-->

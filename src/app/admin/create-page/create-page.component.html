@@ -1,0 +1,132 @@
+<form (ngSubmit)="submit()" [formGroup]="form">
+  <h1>UserModel details</h1>
+
+  <!--  first_name -->
+  <div
+    [ngClass]="{invalid: form.get('first_name').touched && form.get('first_name').invalid}"
+    class="form-control"
+  >
+    <label for="first_name">First name:</label>
+    <input formControlName="first_name" id="first_name" type="text">
+    <div
+      *ngIf="form.get('first_name').touched && form.get('first_name').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('first_name').errors.required">
+        Enter the first name
+      </small>
+    </div>
+  </div>
+
+  <!--  last_name:-->
+  <div
+    [ngClass]="{invalid: form.get('last_name').touched && form.get('last_name').invalid}"
+    class="form-control"
+  >
+    <label for="last_name">Second name:</label>
+    <input formControlName="last_name" id="last_name" type="text">
+    <div
+      *ngIf="form.get('last_name').touched && form.get('last_name').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('last_name').errors.required">
+        Enter the second name
+      </small>
+    </div>
+  </div>
+
+
+  <!--  address:-->
+  <div
+    [ngClass]="{invalid: form.get('address').touched && form.get('address').invalid}"
+    class="form-control"
+  >
+    <label for="address">Address:</label>
+    <input formControlName="address" id="address" type="text">
+    <div
+      *ngIf="form.get('address').touched && form.get('address').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('address').errors.required">
+        Enter the address
+      </small>
+    </div>
+  </div>
+
+
+  <!--  email:-->
+  <div
+    [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+    class="form-control"
+  >
+    <label for="email">Email:</label>
+    <input formControlName="email" id="email" type="text">
+    <div
+      *ngIf="form.get('email').touched && form.get('email').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('email').errors.required">
+        Enter the email
+      </small>
+    </div>
+  </div>
+
+  <!--  ip_address:-->
+  <div
+    [ngClass]="{invalid: form.get('ip_address').touched && form.get('ip_address').invalid}"
+    class="form-control"
+  >
+    <label for="ip_address">IP Address:</label>
+    <input formControlName="ip_address" id="ip_address" type="text">
+    <div
+      *ngIf="form.get('ip_address').touched && form.get('ip_address').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('ip_address').errors.required">
+        Enter the email
+      </small>
+    </div>
+  </div>
+
+
+  <!--  age:-->
+  <div
+    [ngClass]="{invalid: form.get('age').touched && form.get('age').invalid}"
+    class="form-control"
+  >
+    <label for="age">Age:</label>
+    <input formControlName="age" id="age" type="number">
+    <div
+      *ngIf="form.get('age').touched && form.get('age').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('age').errors.required">
+        Enter the email
+      </small>
+    </div>
+  </div>
+
+  <!--  date:-->
+  <div
+    [ngClass]="{invalid: form.get('birthday').touched && form.get('birthday').invalid}"
+    class="form-control"
+  >
+    <label for="birthday">Birthday:</label>
+    <input formControlName="birthday" id="birthday" type="date">
+    <div
+      *ngIf="form.get('birthday').touched && form.get('birthday').invalid"
+      class="validation"
+    >
+      <small *ngIf="form.get('birthday').errors.required">
+        Choose the birthday
+      </small>
+    </div>
+  </div>
+
+  <button
+    [disabled]="form.invalid"
+    class="btn btn-block btn-light"
+    type="submit"
+  >Create user
+  </button>
+</form>

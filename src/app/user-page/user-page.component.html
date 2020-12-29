@@ -1,0 +1,27 @@
+<div class="user">
+  <div *ngIf="isLoading; else usersList">
+    <div class="text-center">
+      <div class="lds-circle">
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <ng-template #usersList>
+    <div>
+      <div class="header">
+        <h1>User Details</h1>
+        <button class="btn btn-link" routerLink="/">To list</button>
+      </div>
+      <div class="info">
+        <div class="container">
+          <p>Firs name:  <strong>{{user.first_name}}</strong></p>
+          <p>Last name:  <strong>{{user.last_name}}</strong></p>
+          <p>Birthday:  <strong>{{user.birthday | date }}</strong></p>
+          <p>IP:  <strong>{{user.ip_address}}</strong></p>
+          <p>Email:  <strong>{{user.email}}</strong></p>
+          <p>Location:  <strong>{{user.address}}</strong></p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>

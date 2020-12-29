@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="card-header">
+    <img src="assets/icons/User-icon.png">
+    <h2>{{ user.first_name }} {{user.last_name }}</h2>
+    <small>{{ user.birthday | date:'dd.MM.yyyy' }}</small>
+  </div>
+
+  <button
+    [routerLink]="['/user', user.id]"
+    class="btn btn-sm btn-block"
+  >OPEN</button>
+</div>
+
