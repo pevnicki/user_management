@@ -15,7 +15,7 @@ npm install
 
 Run ng serve for a dev server and navigate to http://localhost:4200/.
 
-#Project 
+### Project 
 
  Project has two main routes
  1.  '/' root for regular users (display user list and user information )
